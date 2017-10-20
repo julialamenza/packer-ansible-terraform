@@ -1,0 +1,7 @@
+---
+- name: Deploy User and Nginx
+  hosts: all
+  become: yes
+  become_user: root
+  roles:
+    - user.sample
