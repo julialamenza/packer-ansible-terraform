@@ -91,4 +91,8 @@ $ terraform apply
 ```
 
 
+#### Ansible directory has the content that you customize our AMI 
+- Install Nginx
+- Create user
+- Create swap partition
 
