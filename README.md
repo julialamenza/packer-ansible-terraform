@@ -36,9 +36,9 @@ export AWS_SECRET_ACCESS_KEY='<YOUR ApiUserSecretKey>'
 - 1 Route Table to private subnet (default route to Nat Gateway);
 
 
-Access the **terraform/vpc directory** and edit the files: **remote_state.tf**
+##### Access the **terraform/vpc directory** and edit the files: **remote_state.tf**
 
-Change the value **<BUCKET_NAME>** to the bucket name that you created on the CloudFormation, if necessary change the 'region'.
+#####  Change the value **<BUCKET_NAME>** to the bucket name that you created on the CloudFormation, if necessary change the 'region'.
 
 ###### **terraform/vpc/remote_state.tf** 
 ```sh
