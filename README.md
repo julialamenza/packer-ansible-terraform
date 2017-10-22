@@ -1,6 +1,6 @@
 # packer-ansible-terraform-cloud formation
 
-** This repository is about how I use packer, ansible, terraform and cloud formation to make a stack in aws. **
+** This repository is about how I use packer, ansible, terraform and cloud formation to create a stack in aws. **
 
 #### Start installing this:
 
