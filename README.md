@@ -43,10 +43,10 @@ Change the value **<BUCKET_NAME>** to the bucket name that you created on the Cl
 ###### **terraform/vpc/remote_state.tf** 
 ```sh
   backend "s3" {
-    bucket  = "tf-remote-123" #-> change it to the name that you choose
+    bucket  = "bucket-name" #-> change it to the name that you choose
     encrypt = "true"
     key     = "vpc/vpc.tfstate"
-    region  = "us-east-2" #-> change the region if you are using an other region
+    region  = "us-east-1" #-> change the region if you are using an other region
   }
 }
 ```
@@ -74,10 +74,10 @@ After the creation of the AMI, we will 'set up' the last part of our architectur
 ```sh
 terraform {
   backend "s3" {
-    bucket  = "tf-remote-123"
+    bucket  = "bucket-name"
     encrypt = "true"
     key     = "app/app.tfstate"
-    region  = "us-east-2"
+    region  = "us-east-1"
   }
 }
 ```
