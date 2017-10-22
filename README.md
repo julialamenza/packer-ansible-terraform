@@ -9,7 +9,7 @@
 - Terraform 10.07
 
 
-##### First, it is necessary to prepare the AWS account with some resources to run the automation through Terraform, for this you need to create a **Stack** using Cloudformation and import the template using this file **cf_terraform_setup.yml.**
+##### First, it is necessary to prepare the AWS account with some resources to run the automation through Terraform, for this you need to create a **Stack** using Cloudformation and import the template using this file **my_stack.yml.**
 
 - Go to AWS console
 - Click on cludformation service
