@@ -1,6 +1,6 @@
-# packer-ansible-terraform-cloud formation
+# packer-ansible-terraform-cloudformation
 
-** This repository is about how I use packer, ansible, terraform and cloud formation to create a stack in aws. **
+** This repository is about how I use packer, ansible, terraform and cloudformation to create a stack in aws. **
 
 #### Start installing this:
 
@@ -9,10 +9,10 @@
 - Terraform 10.07
 
 
-##### First, it is necessary to prepare the AWS account with some resources to run the automation through Terraform, for this you need to create a **Stack** using Cloudformation and import the template using this file **my_stack.yml.**
+##### First, it is necessary to prepare the AWS account with some resources to run the automation through Terraform, for this you need to create a **Stack** using Cloud formation and import the template using this file **my_stack.yml.**
 
 - Go to AWS console
-- Click on cludformation service
+- Click on cloudformation service
 - Create a Stack and then Design a template
 
 **During the process ll be necessary to inform a bucket name** inform the name that you wish.
