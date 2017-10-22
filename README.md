@@ -36,7 +36,7 @@ export AWS_SECRET_ACCESS_KEY='<YOUR ApiUserSecretKey>'
 - 1 Route Table to private subnet (default route to Nat Gateway);
 
 
-Access the terraform **/ vpc directory** and edit the files: **remote_state.tf**
+Access the **terraform/vpc directory** and edit the files: **remote_state.tf**
 
 Change the value **<BUCKET_NAME>** to the bucket name that you created on the CloudFormation, if necessary change the 'region'.
 
@@ -50,7 +50,7 @@ Change the value **<BUCKET_NAME>** to the bucket name that you created on the Cl
   }
 }
 ```
-##### Access the terraform / vpc directory and initialize the remote backend:
+##### Access the terraform/vpc directory and initialize the remote backend:
 ```$ terraform init ```
 
 ##### Generate the execution plan to verify all the resources that are created:
@@ -67,7 +67,7 @@ Change the value **<BUCKET_NAME>** to the bucket name that you created on the Cl
 
 After the creation of the AMI, we will 'set up' the last part of our architecture.
 
- Access the terraform **/ app directory**, and as done in Step 1, change the value of **<BUCKET_NAME>** to the bucket name that you created in the **remote_state.tf** file, If necessary, change the region key.
+ Access the terraform **/app directory**, and as done in Step 1, change the value of **<BUCKET_NAME>** to the bucket name that you created in the **remote_state.tf** file, If necessary, change the region key.
 
 ###### terraform/app/remote_state.tf:
 
@@ -83,7 +83,7 @@ terraform {
 ```
 ##### Do the same in the var.tf file.
 
-##### Repeat the commands from step 2 but now in the terraform / app directory:
+##### Repeat the commands from step 2 but now in the terraform /app directory:
 ```sh
 $ terraform init
 $ terraform plan
