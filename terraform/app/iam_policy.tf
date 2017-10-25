@@ -1,5 +1,5 @@
 
-/*Cria uma policy a ser usada na IAM role da instancia*/
+#creates a policy to be used in the Instance's IAM Role
 data "aws_iam_policy_document" "dataPolicy" {
   statement {
     actions = [

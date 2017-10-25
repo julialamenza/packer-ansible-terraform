@@ -1,4 +1,4 @@
-/*Alarme de CPU baixa*/
+/*Alarm Low CPU*/
 resource "aws_autoscaling_policy" "CpuLowUtilization" {
   name                   = "scale-down-${var.tag_name}"
   scaling_adjustment     = -1
@@ -25,7 +25,7 @@ resource "aws_cloudwatch_metric_alarm" "CpuLowUtilization" {
   alarm_actions     = ["${aws_autoscaling_policy.CpuLowUtilization.arn}"]
 }
 
-/*Alarm de CPU Alta*/
+/*Alarm High CPU */
 resource "aws_autoscaling_policy" "CpuHighUtilization" {
   name                   = "scale-up-${var.tag_name}"
   scaling_adjustment     = 1

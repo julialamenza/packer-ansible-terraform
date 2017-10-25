@@ -1,5 +1,5 @@
 
-/*Cria um launch configuration*/
+/*Creates a launch configuration*/
 resource "aws_launch_configuration" "launchConfiguration" {
   iam_instance_profile = "${aws_iam_instance_profile.instProfile.name}"
   image_id             = "${data.aws_ami.packer-ami.id}"

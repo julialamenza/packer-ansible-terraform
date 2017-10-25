@@ -1,17 +1,17 @@
 
-/*Cria um security group a ser usado na instancias criadas pelo autoscaling group*/
+/*Creates a SG tp be used in the intances that austoscaling group creates*/
 module "instances_sg" {
   source   = "../modules/aws_security_group"
   vpc_id   = "${data.terraform_remote_state.vpc.vpc_id}"
   tag_name = "SG-${var.tag_name}"
 }
-/*Cria um security group a ser usado ALB*/
+/*Creates an SG to be use at ALB*/
 module "loadbalancer_sg" {
   source   = "../modules/aws_security_group"
   vpc_id   = "${data.terraform_remote_state.vpc.vpc_id}"
   tag_name = "SG-ALB-${var.tag_name}"
 }
-/*Cria uma regra permitindo acesso de qualquer source ao ALB na porta configurada.*/
+/* Creates a rule if permission to any source acess  ALB on the port that was configured.*/
 resource "aws_security_group_rule" "allow_connections_to_alb" {
   type              = "ingress"
   from_port         = "${var.alb_listen_port}"
@@ -23,7 +23,7 @@ resource "aws_security_group_rule" "allow_connections_to_alb" {
     create_before_destroy = true
   }
 }
-/*Cria uma regra no security group das instancias permitindo acesso apenas ao ALB na porta configurada*/
+/*Creates a rule in the instance security group that allows access only to the ALB on the configured porta*/
 resource "aws_security_group_rule" "allow_connections_from_alb" {
   type                     = "ingress"
   from_port                = "${var.app_listen_port}"

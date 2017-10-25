@@ -1,5 +1,5 @@
+#Creates public subnets based on availability zones configured in vars.tf
 
-/*Cria as subnets públicas com base nas zonas de disponibilidade configuradas em vars.tf*/
 resource "aws_subnet" "public-subnet" {
     count                   = "${length(split(",", lookup(var.azs, var.region)))}"
     vpc_id                  = "${aws_vpc.main.id}"
@@ -10,7 +10,8 @@ resource "aws_subnet" "public-subnet" {
         "Name" = "public-${element(split(",", lookup(var.azs, var.region)), count.index)}"
     }
 }
-/*Cria uma route table que será usada por todas as subnets publicas*/
+
+#Creates a route table that will be used by all public subnets
 resource "aws_route_table" "rt_public" {
   vpc_id = "${aws_vpc.main.id}"
   route {
@@ -21,7 +22,7 @@ resource "aws_route_table" "rt_public" {
     Name = "public_subnets"
   }
 }
-/*Associa a route table as subnets publicas*/
+/*Assciate the route table to public subnets*/
 resource "aws_route_table_association" "rt_public" {
   count          = "${length(split(",", lookup(var.azs, var.region)))}"
   subnet_id      = "${element(aws_subnet.public-subnet.*.id, count.index)}"
@@ -31,7 +32,7 @@ resource "aws_route_table_association" "rt_public" {
 /*
 PRIVATE SUBNETS
 */
-/*Cria as subnets privadas com base nas zonas de disponibilidade configuradas em vars.tf*/
+#Creates private subnets based on availability zones configured in vars.tf
 resource "aws_subnet" "private-subnet" {
     count             = "${length(split(",", lookup(var.azs, var.region)))}"
     vpc_id            = "${aws_vpc.main.id}"
@@ -42,7 +43,7 @@ resource "aws_subnet" "private-subnet" {
         "Name" = "private-${element(split(",", lookup(var.azs, var.region)), count.index)}"
     }
 }
-/*Cria uma route table que será usada por todas as subnets privadas*/
+#Creates a route table that will be used by all private subnets
 resource "aws_route_table" "rt_private" {
   vpc_id = "${aws_vpc.main.id}"
   route {
@@ -53,7 +54,7 @@ resource "aws_route_table" "rt_private" {
     Name = "private_subnets"
   }
 }
-/*Associa a route table as subnets privadas*/
+#Assciate the route table to private subnets
 resource "aws_route_table_association" "rt_private" {
   count          = "${length(split(",", lookup(var.azs, var.region)))}"
   subnet_id      = "${element(aws_subnet.private-subnet.*.id, count.index)}"

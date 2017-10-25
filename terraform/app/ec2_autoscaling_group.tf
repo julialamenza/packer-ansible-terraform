@@ -1,5 +1,5 @@
 
-/*Provisiona um autoscaling group*/
+/*Provides an autoscaling group*/
 resource "aws_autoscaling_group" "AutoScalingGroup" {
   name                 = "asg-${var.tag_name}"
   min_size             = "${var.asg_min_size}"

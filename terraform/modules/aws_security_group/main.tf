@@ -1,4 +1,4 @@
-/*Modulo que cria security groups.*/
+/*Module that creates  security groups.*/
 resource "aws_security_group" "secGroup" {
   name = "${var.tag_name}"
   description = "Managed by Terraform"

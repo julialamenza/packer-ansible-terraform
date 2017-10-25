@@ -1,9 +1,9 @@
-/*Utiliza o provider AWS na região especificada no arquivo vars.tf*/
+/*Uses the AWS provider in the region specified in the vars.tf file*/
 provider "aws" {
   region = "${var.region}"
 }
 
-/*Datasource usado para capturar informações da VPC provisionada, com isso é possível acessar variáveis de outro projeto para serem usadas.*/
+/*Datasource used to capture information from the provisioned VPC, so it is possible to access variables from another project to be used.*/
 data "terraform_remote_state" "vpc" {
   backend = "s3"
   config = {

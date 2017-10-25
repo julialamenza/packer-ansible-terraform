@@ -1,5 +1,5 @@
 
-/*Provisiona ALB na rede pública*/
+/*Provides ALB in publick network*/
 resource "aws_alb" "loadBalancer" {
   name = "alb-${var.tag_name}"
   internal = false
@@ -10,7 +10,7 @@ resource "aws_alb" "loadBalancer" {
     create_before_destroy = true
   }
 }
-/*Criar um listener na porta definida para o ALB criado acima*/
+/*Create a listener on the port defined for the ALB created above*/
 resource "aws_alb_listener" "albListeners" {
   load_balancer_arn = "${aws_alb.loadBalancer.arn}"
   port = "${var.alb_listen_port}"

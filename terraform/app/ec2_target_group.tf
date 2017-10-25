@@ -1,4 +1,4 @@
-/*Provisiona um target group usado pelo ALB*/
+/*Provides a target group used for ALB*/
 resource "aws_alb_target_group" "targetGroup"{
   name = "tg-${var.tag_name}"
   port = "${var.app_listen_port}"

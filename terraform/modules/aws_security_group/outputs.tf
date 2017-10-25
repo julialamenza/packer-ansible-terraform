@@ -1,4 +1,4 @@
-/*Saidas que poderão ser usadas pelos resources*/
+/*outputs that shoul be use by resources*/
 output "sg_name" {
   value = "${aws_security_group.secGroup.name}"
 }

@@ -1,16 +1,16 @@
 
-/*Região que será utilizada para provisionar a aplicação*/
+/*Region that ll be use to provide the application */
 variable "region"                 { default = "us-east-1"}
-/*Nome do bucket criado pelo template do cloudformation*/
+/*Bucket Name that was create on cloud formation template*/
 variable "bucket_name"            { default = "joujou" }
 
 /*Instance ans autoscaling settings*/
 variable "tag_name"               { default = "myinstance" }
-/*Tamanho da instancia que será utilizado*/
+/*Intance sizeo*/
 variable "instance_type"          { default = "t2.micro" }
-/*Porta que será usada pela aplicação. É usada para criação das regras de security group*/
+/* Port that will be used by the application. It is used to create the security group rules*/
 variable "app_listen_port"        { default = "8080" }
-/*Tamanho do disco da instancia provisionada, porta padrão 8GB*/
+/*Provisioned instance disk size, default port 8GB*/
 variable "root_volume_size"       { default = 8 }
 
 /*Autoscaling size*/
@@ -19,7 +19,8 @@ variable "asg_max_size"           { default = 3 }
 variable "asg_des_size"           { default = 1 }
 
 /*ALB Settings*/
-#Porta utilizada pelo ALB. variável usada para definição das regras de security group
+
+#Port used by ALB. variable used to define security group rules
 variable "alb_listen_port"        { default = 80 }
 /*ALB Healthcheck configuration*/
 variable "hc_interval"            { default = "15" }

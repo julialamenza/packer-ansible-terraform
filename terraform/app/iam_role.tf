@@ -1,5 +1,4 @@
-
-/*Cria uma policy document necessária pela iam role*/
+/*Creates a policy document required for IAM Role*/
 data "aws_iam_policy_document" "dataInstancePolicy" {
   statement {
     actions = ["sts:AssumeRole"]

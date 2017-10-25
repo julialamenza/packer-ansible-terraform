@@ -1,7 +1,8 @@
 /*
 Author: Julia Lamenza
 */
-/*Saída dos resultados ao final da execução.*/
+
+#Output of results at the end of execution
 output "vpc_id" {
   value = "${aws_vpc.main.id}"
 }

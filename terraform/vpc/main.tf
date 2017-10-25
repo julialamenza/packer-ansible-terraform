@@ -1,7 +1,7 @@
 /*
 Author: Julia Lamenza
 */
-/*Definição do provider e região a ser usada*/
+/*Definition of provider and region to be used*/
 provider "aws" {
   region  = "${var.region}"
 }
