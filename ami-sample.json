@@ -11,7 +11,6 @@
     "region": "us-east-1",
     "source_ami": "ami-cd0f5cb6",
     "instance_type": "t2.micro",
-    "ssh_username": "ec2-user",
     "subnet_id": "",
     "ssh_username": "ubuntu",
     "ami_name": "packer-ami {{timestamp}}"
@@ -28,8 +27,8 @@
     },
     {
       "type": "ansible-local",
-      "playbook_file": "/etc/ansible/playbooks/sample.yml",
-       "role_paths": "/etc/ansible/roles/user.sample/"
+      "playbook_file": "/ansible/playbooks/sample.yml",
+       "role_paths": "/ansible/roles/user.sample/"
     }
   ]
 }
