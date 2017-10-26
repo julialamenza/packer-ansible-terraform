@@ -21,7 +21,7 @@ resource "aws_cloudwatch_metric_alarm" "CpuLowUtilization" {
     AutoScalingGroupName = "${aws_autoscaling_group.AutoScalingGroup.name}"
   }
 
-  alarm_description = "Remove 1 instancia caso o ASG esteja com CPU abaixo de 15% por 10 minutos consecutivos"
+  alarm_description = "Removes 1 instance if the ASG is CPU less than 15% for 10 consecutive minutes"
   alarm_actions     = ["${aws_autoscaling_policy.CpuLowUtilization.arn}"]
 }
 
@@ -48,6 +48,6 @@ resource "aws_cloudwatch_metric_alarm" "CpuHighUtilization" {
     AutoScalingGroupName = "${aws_autoscaling_group.AutoScalingGroup.name}"
   }
 
-  alarm_description = "Adiciona 1 instancia caso o ASG esteja com CPU acima de 45% por 4 minutos."
+  alarm_description = "Add 1 instance if the ASG is CPU up to 45% for 4 minutes."
   alarm_actions     = ["${aws_autoscaling_policy.CpuHighUtilization.arn}"]
 }
