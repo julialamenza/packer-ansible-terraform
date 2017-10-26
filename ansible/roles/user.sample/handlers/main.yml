@@ -1,2 +1,5 @@
 ---
 # handlers file for /etc/ansible/roles/user
+
+- name: restart nginx
+  service: name=nginx state=restarted enabled=yes
