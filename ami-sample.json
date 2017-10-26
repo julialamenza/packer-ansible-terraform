@@ -27,8 +27,8 @@
     },
     {
       "type": "ansible-local",
-      "playbook_file": "/ansible/playbooks/sample.yml",
-       "role_paths": "/ansible/roles/user.sample/"
+      "playbook_file": "ansible/playbooks/sample.yml",
+       "role_paths": "ansible/roles/user.sample/"
     }
   ]
 }

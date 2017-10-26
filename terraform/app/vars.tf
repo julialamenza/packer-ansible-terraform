@@ -9,7 +9,7 @@ variable "tag_name"               { default = "myinstance" }
 /*Intance sizeo*/
 variable "instance_type"          { default = "t2.micro" }
 /* Port that will be used by the application. It is used to create the security group rules*/
-variable "app_listen_port"        { default = "8080" }
+variable "app_listen_port"        { default = "80" }
 /*Provisioned instance disk size, default port 8GB*/
 variable "root_volume_size"       { default = 8 }
 
